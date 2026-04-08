@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Tetra Building — Licensed Building Practitioner in Auckland. New builds, renovations, extensions, decks and project management. 10+ years experience.">
+<meta name="keywords" content="builder Auckland, licensed building practitioner, new builds Auckland, renovations Auckland, extensions, decks, project management">
+<meta name="author" content="Tetra Building">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Tetra Building — Licensed Builder Auckland">
+<meta property="og:description" content="Quality builds, honest service. Licensed Building Practitioner with 10+ years experience across Auckland.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NZ">
+<title>Tetra Building — Licensed Builder Auckland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --gold: #C8A84E;
+  --gold-light: #D4BA6A;
+  --gold-dark: #A68A3E;
+  --black: #0A0A0A;
+  --black-light: #111111;
+  --black-card: #141414;
+  --black-border: #1E1E1E;
+  --white: #FFFFFF;
+  --gray: #888888;
+  --gray-light: #AAAAAA;
+  --gray-dark: #333333;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --nav-height: 72px;
+  --max-width: 1200px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+
+body {
+  font-family: var(--font);
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button, input, textarea, select { font-family: inherit; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  z-index: 1000;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.nav.scrolled {
+  border-bottom-color: var(--black-border);
+  background: rgba(10, 10, 10, 0.95);
+}
+
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.nav-logo svg { flex-shrink: 0; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-light);
+  transition: color var(--transition);
+  letter-spacing: 0.01em;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.nav-cta {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity var(--transition);
+  line-height: 1.2;
+}
+
+.nav-cta .pi-name {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.nav-cta .pi-accent { color: var(--green); }
+
+.nav-cta .pi-sub {
+  font-size: 9px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  margin-top: 2px;
+}
+
+.nav-cta:hover { opacity: 0.8; }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.nav-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(var(--nav-height) + 40px) 24px 80px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(200, 168, 78, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(200, 168, 78, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.hero-content { position: relative; max-width: 900px; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  background: rgba(200, 168, 78, 0.1);
+  border: 1px solid rgba(200, 168, 78, 0.2);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.hero-badge svg { flex-shrink: 0; }
+
+.hero h1 {
+  font-size: clamp(44px, 7vw, 80px);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.hero h1 .gold { color: var(--gold); }
+
+.hero p {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--gray-light);
+  max-width: 600px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--black);
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200, 168, 78, 0.25);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--gray-dark);
+}
+
+.btn-secondary:hover {
+  border-color: var(--gray);
+  transform: translateY(-2px);
+}
+
+/* ========== STATS ========== */
+.stats {
+  border-top: 1px solid var(--black-border);
+  border-bottom: 1px solid var(--black-border);
+  background: var(--black-light);
+  padding: 48px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.stat-item p {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 8px;
+}
+
+/* ========== SECTION COMMON ========== */
+.section {
+  padding: 100px 0;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.section-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.section-desc {
+  font-size: 17px;
+  color: var(--gray-light);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ========== SERVICES ========== */
+.services { background: var(--black); }
+
+.services-header { margin-bottom: 64px; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  position: relative;
+  padding: 40px 32px;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 8px;
+  transition: all var(--transition);
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition);
+}
+
+.service-card:hover {
+  border-color: rgba(200, 168, 78, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(200, 168, 78, 0.08);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  color: var(--gold);
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ========== PORTFOLIO ========== */
+.portfolio { background: var(--black-light); border-top: 1px solid var(--black-border); }
+
+.portfolio-header { margin-bottom: 48px; }
+
+.portfolio-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray);
+  background: transparent;
+  border: 1px solid var(--black-border);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-btn:hover { color: var(--white); border-color: var(--gray-dark); }
+
+.filter-btn.active {
+  color: var(--black);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.portfolio-item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--black-card);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.08);
+  filter: brightness(0.7);
+}
+
+.portfolio-item .overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.portfolio-item:hover .overlay { opacity: 1; }
+
+.overlay .tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.overlay .caption {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.portfolio-item.hidden {
+  display: none;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.95);
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: pointer;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 24px;
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+.lightbox-close:hover { border-color: var(--white); }
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 20px;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.lightbox-nav:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-caption {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-light);
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .lightbox-nav { display: none; }
+}
+
+/* ========== ABOUT ==========*/
+.about {
+  background: var(--black-light);
+  border-top: 1px solid var(--black-border);
+  border-bottom: 1px solid var(--black-border);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about-content .section-desc { margin-bottom: 32px; }
+
+.about-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.credential {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: rgba(200, 168, 78, 0.05);
+  border: 1px solid rgba(200, 168, 78, 0.1);
+  border-radius: 6px;
+}
+
+.credential svg { flex-shrink: 0; color: var(--gold); }
+
+.credential div { flex: 1; }
+
+.credential .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.credential .value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: 2px;
+}
+
+.about-visual {
+  position: relative;
+}
+
+.about-pattern {
+  aspect-ratio: 1;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(200, 168, 78, 0.05) 0%, transparent 50%),
+    linear-gradient(-45deg, rgba(200, 168, 78, 0.03) 0%, transparent 50%);
+}
+
+.tetra-symbol {
+  position: relative;
+  z-index: 1;
+}
+
+.tetra-symbol svg {
+  width: 200px;
+  height: 200px;
+  opacity: 0.15;
+}
+
+.about-pattern .stamp {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1;
+  text-align: right;
+}
+
+.stamp .lbp {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.stamp .number {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+  opacity: 0.6;
+}
+
+/* ========== PRICED IN ========== */
+:root { --green: #22c55e; --green-dark: #16a34a; }
+
+.pricedin {
+  background: var(--black);
+  border-top: 1px solid var(--black-border);
+  border-bottom: 1px solid var(--black-border);
+}
+
+.pricedin-card {
+  position: relative;
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 56px;
+}
+
+.pricedin-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--green-dark), var(--gold));
+}
+
+.pricedin-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.pricedin-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.pricedin-intro { max-width: 560px; }
+
+.pricedin-logo {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.pricedin-logo span { color: var(--green); }
+
+.pricedin-tagline {
+  font-size: 15px;
+  color: var(--gray);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.pricedin-intro .section-desc { margin-bottom: 0; }
+
+.pricedin-price {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.pricedin-amount {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.pricedin-amount span {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+.pricedin-trial {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+  margin-top: 8px;
+}
+
+.pricedin-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.pricedin-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 0;
+}
+
+.pricedin-feature svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--green);
+}
+
+.pricedin-feature p {
+  font-size: 14px;
+  color: var(--gray-light);
+  line-height: 1.6;
+}
+
+.pricedin-feature strong {
+  color: var(--white);
+  font-weight: 600;
+}
+
+.pricedin-bottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.pricedin-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 36px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+
+.pricedin-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200, 168, 78, 0.25);
+}
+
+.pricedin-cta svg { flex-shrink: 0; }
+
+.pricedin-note {
+  font-size: 13px;
+  color: var(--gray);
+}
+
+@media (max-width: 768px) {
+  .pricedin-card { padding: 32px 24px; }
+  .pricedin-top { flex-direction: column; gap: 24px; }
+  .pricedin-price { text-align: left; }
+  .pricedin-features { grid-template-columns: 1fr; }
+}
+
+/* ========== CONTACT ========== */
+.contact { background: var(--black); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+}
+
+.contact-info { padding-top: 8px; }
+
+.contact-info .section-desc { margin-bottom: 48px; }
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-method-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(200, 168, 78, 0.08);
+  border-radius: 8px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.contact-method .label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.contact-method .value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  margin-top: 2px;
+}
+
+.contact-method a.value:hover { color: var(--gold); }
+
+.contact-form-wrap {
+  background: var(--black-card);
+  border: 1px solid var(--black-border);
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-light);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 14px 16px;
+  background: var(--black);
+  border: 1px solid var(--black-border);
+  border-radius: 6px;
+  color: var(--white);
+  font-size: 15px;
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-dark);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--gold);
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1.5l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-group select option {
+  background: var(--black);
+  color: var(--white);
+}
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.form-submit:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(200, 168, 78, 0.2);
+}
+
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.form-status {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 20px;
+}
+
+.form-status.success { color: #4CAF50; }
+.form-status.error { color: #F44336; }
+
+/* ========== FOOTER ========== */
+.footer {
+  border-top: 1px solid var(--black-border);
+  padding: 48px 0;
+  background: var(--black-light);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: var(--gray);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: var(--gray);
+  transition: color var(--transition);
+}
+
+.footer-links a:hover { color: var(--gold); }
+
+/* ========== MOBILE NAV ========== */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--nav-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  padding: 40px 24px;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.mobile-menu.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--gray-light);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--black-border);
+  transition: color var(--transition);
+}
+
+.mobile-menu a:hover { color: var(--white); }
+
+.mobile-menu .nav-cta {
+  margin-top: 24px;
+  justify-content: center;
+  padding: 16px 24px;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { gap: 48px; }
+  .contact-grid { gap: 48px; }
+}
+
+@media (max-width: 768px) {
+  :root { --nav-height: 64px; }
+
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+
+  .hero { min-height: 100svh; padding-bottom: 60px; }
+  .hero-badge { margin-bottom: 24px; }
+
+  .stats-grid { grid-template-columns: 1fr; gap: 24px; }
+  .stat-item { padding: 8px 0; }
+
+  .section { padding: 72px 0; }
+  .services-grid { grid-template-columns: 1fr; }
+  .service-card { padding: 32px 24px; }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-visual { order: -1; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 28px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+
+  .hero-actions { flex-direction: column; width: 100%; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 36px; }
+  .section-title { font-size: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav" id="nav">
+  <div class="container">
+    <a href="#" class="nav-logo" aria-label="Tetra Building — Home">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 2L28 28H4L16 2Z" stroke="#C8A84E" stroke-width="2" fill="none"/>
+        <path d="M16 10L22 24H10L16 10Z" stroke="#C8A84E" stroke-width="1.5" fill="none" opacity="0.5"/>
+      </svg>
+      TETRA BUILDING
+    </a>
+    <ul class="nav-links" role="navigation" aria-label="Main navigation">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://www.pricedin.co.nz" target="_blank" rel="noopener" class="nav-cta" aria-label="Priced In App"><span class="pi-name">Priced<span class="pi-accent">In</span></span><span class="pi-sub">Builders Quoting Tool</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ========== MOBILE MENU ========== -->
+<div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+  <a href="#services" class="mobile-link">Services</a>
+  <a href="#portfolio" class="mobile-link">Portfolio</a>
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="https://www.pricedin.co.nz" target="_blank" rel="noopener" class="nav-cta"><span class="pi-name">Priced<span class="pi-accent">In</span></span><span class="pi-sub">Builders Quoting Tool</span></a>
+</div>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <h1>Build <span class="gold">Bold.</span><br>Build Right.</h1>
+    <p>Quality craftsmanship and honest service across Auckland. From new builds to renovations, we deliver results that stand the test of time.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">Get a Quote</a>
+      <a href="#services" class="btn btn-secondary">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== STATS ========== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <h3>10+</h3>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat-item fade-in">
+        <h3>BP152541</h3>
+        <p>LBP Licensed</p>
+      </div>
+      <div class="stat-item fade-in">
+        <h3>Auckland</h3>
+        <p>& Surrounds</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="services-header fade-in">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Built for Every Stage</h2>
+      <p class="section-desc">From ground-up builds to finishing touches, we bring the same standard of quality to every project.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg>
+        </div>
+        <h3>New Builds</h3>
+        <p>Complete new home construction from foundation to finish. Designed and built to the highest standards with full project oversight.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>Renovations & Alterations</h3>
+        <p>Transform your existing home with thoughtful renovations. We work with your vision to modernise and improve every space.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"/><path d="M9 21V10H3v11"/><path d="M21 21V3h-6v18"/><path d="M15 21V7H9"/></svg>
+        </div>
+        <h3>Extensions</h3>
+        <p>Need more room? We design and build extensions that integrate seamlessly with your existing home and add real value.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M2 10h20"/><path d="M6 6v-2"/><path d="M18 6v-2"/></svg>
+        </div>
+        <h3>Decks & Outdoor</h3>
+        <p>Create the perfect outdoor living space with custom-built decks, pergolas, and outdoor structures built to last.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h3>Maintenance</h3>
+        <p>Reliable building maintenance to keep your property in top shape. From weather-tightness to general repairs, we have you covered.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 14l2 2 4-4"/></svg>
+        </div>
+        <h3>Project Management</h3>
+        <p>End-to-end project management from consents to completion. We coordinate trades, timelines, and budgets so you don't have to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PORTFOLIO ========== -->
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-header fade-in">
+      <div class="section-label">Our Work</div>
+      <h2 class="section-title">Built to Last</h2>
+      <p class="section-desc">A selection of recent projects across Auckland — from ground-up builds to full renovations and everything in between.</p>
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="decks">Decks & Outdoor</button>
+        <button class="filter-btn" data-filter="renovations">Renovations</button>
+        <button class="filter-btn" data-filter="extensions">Extensions</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+      </div>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-in" data-category="renovations">
+        <img src="images/img_3835.jpg" alt="Designer powder room with statement mirror and terrazzo vanity" loading="lazy">
+        <div class="overlay"><span class="tag">Renovation</span><span class="caption">Designer Powder Room</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="decks">
+        <img src="images/img_1018.jpg" alt="Finished timber deck with built-in bench seating" loading="lazy">
+        <div class="overlay"><span class="tag">Decks & Outdoor</span><span class="caption">Timber Deck & Seating</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="decks">
+        <img src="images/img_4767.jpg" alt="Modern deck with louvre pergola" loading="lazy">
+        <div class="overlay"><span class="tag">Decks & Outdoor</span><span class="caption">Deck & Louvre Pergola</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="renovations">
+        <img src="images/img_1450.jpg" alt="Modern bathroom with freestanding bath and stone tiles" loading="lazy">
+        <div class="overlay"><span class="tag">Renovation</span><span class="caption">Bathroom Fitout</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="extensions">
+        <img src="images/img_1893.jpg" alt="Villa extension with weatherboard cladding and gable detail" loading="lazy">
+        <div class="overlay"><span class="tag">Extension</span><span class="caption">Villa Extension</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="decks">
+        <img src="images/img_4259.jpg" alt="Finished hardwood deck with white pergola" loading="lazy">
+        <div class="overlay"><span class="tag">Decks & Outdoor</span><span class="caption">Hardwood Deck & Pergola</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="extensions">
+        <img src="images/img_2881.jpg" alt="Large glass sliding doors opening to deck" loading="lazy">
+        <div class="overlay"><span class="tag">Extension</span><span class="caption">Opening Up Living Spaces</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="renovations">
+        <img src="images/img_4851.jpg" alt="Dark timber hallway with wall lighting" loading="lazy">
+        <div class="overlay"><span class="tag">Renovation</span><span class="caption">Hallway & Entrance</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="renovations">
+        <img src="images/img_2414.jpg" alt="Modern cedar-clad garage and entrance" loading="lazy">
+        <div class="overlay"><span class="tag">Renovation</span><span class="caption">Cedar Cladding & Garage</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="commercial">
+        <img src="images/img_3838.jpg" alt="Hotel room fitout with designer finishes" loading="lazy">
+        <div class="overlay"><span class="tag">Commercial</span><span class="caption">Hotel Room Fitout</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="commercial">
+        <img src="images/img_3840.jpg" alt="Hotel lounge area with feature lighting" loading="lazy">
+        <div class="overlay"><span class="tag">Commercial</span><span class="caption">Hotel Lounge Area</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="decks">
+        <img src="images/img_4764.jpg" alt="Deck build with steps and retaining wall" loading="lazy">
+        <div class="overlay"><span class="tag">Decks & Outdoor</span><span class="caption">Deck & Retaining</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="extensions">
+        <img src="images/img_1894.jpg" alt="Extension gable detail with decorative brackets" loading="lazy">
+        <div class="overlay"><span class="tag">Extension</span><span class="caption">Gable Detail</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="renovations">
+        <img src="images/img_3495.jpg" alt="Feature tile shower with dark slate tiles" loading="lazy">
+        <div class="overlay"><span class="tag">Renovation</span><span class="caption">Feature Tile Shower</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="renovations">
+        <img src="images/img_0837.jpg" alt="Villa renovation exterior with bay window" loading="lazy">
+        <div class="overlay"><span class="tag">Renovation</span><span class="caption">Villa Renovation</span></div>
+      </div>
+      <div class="portfolio-item fade-in" data-category="commercial">
+        <img src="images/img_4342.jpg" alt="Commercial PO Box installation" loading="lazy">
+        <div class="overlay"><span class="tag">Commercial</span><span class="caption">Commercial Fitout</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content fade-in">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Licensed. Experienced. Local.</h2>
+        <p class="section-desc">Tetra Building is an Auckland-based building company led by Denholm, a Licensed Building Practitioner with over a decade of hands-on experience in residential construction.</p>
+        <p class="section-desc" style="margin-top: 16px;">We believe great building starts with clear communication, honest pricing, and a commitment to doing things right the first time. Every project gets our full attention from start to finish.</p>
+        <div class="about-credentials" style="margin-top: 32px;">
+          <div class="credential">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <div>
+              <div class="label">LBP Licence</div>
+              <div class="value">BP152541</div>
+            </div>
+          </div>
+          <div class="credential">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div>
+              <div class="label">Experience</div>
+              <div class="value">10+ Years in Residential Construction</div>
+            </div>
+          </div>
+          <div class="credential">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div>
+              <div class="label">Location</div>
+              <div class="value">Auckland & Surrounds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual fade-in">
+        <div class="about-pattern">
+          <div class="tetra-symbol">
+            <svg viewBox="0 0 200 200" fill="none" aria-hidden="true">
+              <path d="M100 20L180 170H20L100 20Z" stroke="#C8A84E" stroke-width="2"/>
+              <path d="M100 50L155 150H45L100 50Z" stroke="#C8A84E" stroke-width="1.5" opacity="0.6"/>
+              <path d="M100 80L130 130H70L100 80Z" stroke="#C8A84E" stroke-width="1" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="stamp">
+            <div class="lbp">Licensed Building Practitioner</div>
+            <div class="number">BP152541</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Let's Talk About Your Build</h2>
+        <p class="section-desc">Whether you're planning a new build or need advice on a renovation, we're here to help. Get in touch for a free, no-obligation chat.</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="label">Phone</div>
+              <a href="tel:0272727119" class="value">027 272 7119</a>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="label">Email</div>
+              <a href="mailto:tetrabuilding@outlook.com" class="value">tetrabuilding@outlook.com</a>
+            </div>
+          </div>
+          <div class="contact-method">
+            <div class="contact-method-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="label">Location</div>
+              <div class="value">Auckland & Surrounds</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap fade-in">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="Your phone number" required autocomplete="tel">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="new-build">New Build</option>
+              <option value="renovation">Renovation / Alteration</option>
+              <option value="extension">Extension</option>
+              <option value="deck-outdoor">Deck / Outdoor</option>
+              <option value="maintenance">Maintenance</option>
+              <option value="project-management">Project Management</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your project..." rows="5" required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Enquiry</button>
+          <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICED IN ========== -->
+<section class="section pricedin" id="pricedin">
+  <div class="container">
+    <div class="pricedin-card fade-in">
+      <div class="pricedin-top">
+        <div class="pricedin-intro">
+          <div class="pricedin-logo">Priced<span>In</span></div>
+          <div class="pricedin-tagline">Built by a NZ builder, for NZ builders</div>
+          <p class="section-desc">AI-powered quoting built for builders who are on the tools, not behind a desk. Generate accurate material and labour quotes on site from your phone.</p>
+        </div>
+        <div class="pricedin-price">
+          <div class="pricedin-amount">$79.95<span>/mo NZD</span></div>
+          <div class="pricedin-trial">14-day free trial &middot; No lock-in</div>
+        </div>
+      </div>
+      <div class="pricedin-features">
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>Smart Quote engine</strong> trained on NZ building standards (NZS 3604:2011) and real Auckland labour rates</p>
+        </div>
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>Full Carters price book</strong> &mdash; 17,000+ products, live pricing, always up to date</p>
+        </div>
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>Plan reader</strong> &mdash; upload consented PDF plans, AI extracts full material takeoff automatically</p>
+        </div>
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>Invoice reconciliation</strong> &mdash; cross-check delivery dockets against quoted prices instantly</p>
+        </div>
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>LBP knowledge base</strong> &mdash; E2/AS1 weathertightness, H1 insulation, B1 structure, treatment grades baked in</p>
+        </div>
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>21 compliance documents in RAG</strong> &mdash; MBIE Acceptable Solutions, NZS standards, GIB, Hardie, Colorsteel install guides</p>
+        </div>
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>Labour rates audited to 2026</strong> NZ industry standards across all trades</p>
+        </div>
+        <div class="pricedin-feature">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          <p><strong>Quote from site, win the job</strong> &mdash; built for builders who are on the tools, not behind a desk</p>
+        </div>
+      </div>
+      <div class="pricedin-bottom">
+        <a href="https://www.pricedin.co.nz" target="_blank" rel="noopener" class="pricedin-cta">
+          Start Free Trial
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </a>
+        <span class="pricedin-note">www.pricedin.co.nz</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== LIGHTBOX ========== -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>
+  <button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>
+  <img src="" alt="" id="lightboxImg">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-copy">&copy; 2026 Tetra Building. All rights reserved. LBP BP152541.</div>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // Nav scroll effect
+  var nav = document.getElementById('nav');
+  var scrolled = false;
+
+  function onScroll() {
+    var shouldBeScrolled = window.scrollY > 40;
+    if (shouldBeScrolled !== scrolled) {
+      scrolled = shouldBeScrolled;
+      nav.classList.toggle('scrolled', scrolled);
+    }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Mobile menu
+  var toggle = document.getElementById('navToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileLinks = mobileMenu.querySelectorAll('a');
+
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', function() {
+    var isOpen = mobileMenu.classList.contains('open');
+    if (isOpen) {
+      closeMenu();
+    } else {
+      mobileMenu.classList.add('open');
+      toggle.classList.add('active');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  mobileLinks.forEach(function(link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Scroll fade-in
+  var fadeEls = document.querySelectorAll('.fade-in');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  fadeEls.forEach(function(el) { observer.observe(el); });
+
+  // Contact form
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Basic validation
+    var name = form.querySelector('#name').value.trim();
+    var phone = form.querySelector('#phone').value.trim();
+    var email = form.querySelector('#email').value.trim();
+    var service = form.querySelector('#service').value;
+    var message = form.querySelector('#message').value.trim();
+
+    if (!name || !phone || !email || !service || !message) {
+      status.textContent = 'Please fill in all fields.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      status.textContent = 'Please enter a valid email address.';
+      status.className = 'form-status error';
+      return;
+    }
+
+    var btn = form.querySelector('.form-submit');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    status.textContent = '';
+    status.className = 'form-status';
+
+    var formData = new FormData();
+    formData.append('name', name);
+    formData.append('phone', phone);
+    formData.append('email', email);
+    formData.append('service', service);
+    formData.append('message', message);
+    formData.append('_subject', 'New Enquiry from ' + name + ' \u2014 ' + service);
+    formData.append('_captcha', 'false');
+    formData.append('_template', 'table');
+
+    fetch('https://formsubmit.co/ajax/tetrabuilding@outlook.com', {
+      method: 'POST',
+      body: formData
+    })
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      if (data.success) {
+        status.textContent = 'Enquiry sent! We\'ll be in touch soon.';
+        status.className = 'form-status success';
+        form.reset();
+      } else {
+        status.textContent = 'Something went wrong. Please call us on 027 272 7119.';
+        status.className = 'form-status error';
+      }
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry';
+    })
+    .catch(function() {
+      status.textContent = 'Network error. Please call us on 027 272 7119.';
+      status.className = 'form-status error';
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry';
+    });
+  });
+
+  // Portfolio filters
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  filterBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      var filter = btn.getAttribute('data-filter');
+      portfolioItems.forEach(function(item) {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Lightbox
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  var lightboxCaption = document.getElementById('lightboxCaption');
+  var currentIndex = 0;
+
+  function getVisibleItems() {
+    return Array.from(portfolioItems).filter(function(item) {
+      return !item.classList.contains('hidden');
+    });
+  }
+
+  function openLightbox(index) {
+    var items = getVisibleItems();
+    currentIndex = index;
+    var img = items[index].querySelector('img');
+    var caption = items[index].querySelector('.caption');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = caption ? caption.textContent : '';
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navLightbox(dir) {
+    var items = getVisibleItems();
+    currentIndex = (currentIndex + dir + items.length) % items.length;
+    var img = items[currentIndex].querySelector('img');
+    var caption = items[currentIndex].querySelector('.caption');
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = caption ? caption.textContent : '';
+  }
+
+  portfolioItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      var items = getVisibleItems();
+      var idx = items.indexOf(item);
+      if (idx !== -1) openLightbox(idx);
+    });
+  });
+
+  lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  lightbox.querySelector('.lightbox-prev').addEventListener('click', function(e) { e.stopPropagation(); navLightbox(-1); });
+  lightbox.querySelector('.lightbox-next').addEventListener('click', function(e) { e.stopPropagation(); navLightbox(1); });
+  lightbox.addEventListener('click', function(e) { if (e.target === lightbox) closeLightbox(); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') navLightbox(-1);
+    if (e.key === 'ArrowRight') navLightbox(1);
+  });
+})();
+</script>
+</body>
+</html>
