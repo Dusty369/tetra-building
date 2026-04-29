@@ -1222,7 +1222,7 @@ button, input, textarea, select { font-family: inherit; }
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item fade-in">
-        <h3>10+</h3>
+        <h3 data-counter="10" data-suffix="+">0+</h3>
         <p>Years Experience</p>
       </div>
       <div class="stat-item fade-in">
@@ -1642,6 +1642,34 @@ button, input, textarea, select { font-family: inherit; }
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
   fadeEls.forEach(function(el) { observer.observe(el); });
+
+  // Counter animation (stats section)
+  var counterEls = document.querySelectorAll('[data-counter]');
+  var counterObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (!entry.isIntersecting) return;
+      var el = entry.target;
+      counterObserver.unobserve(el);
+      var target = parseInt(el.getAttribute('data-counter'), 10) || 0;
+      var suffix = el.getAttribute('data-suffix') || '';
+      var duration = 1500;
+      var start = null;
+      function step(ts) {
+        if (start === null) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var value = Math.floor(progress * target);
+        el.textContent = value + suffix;
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target + suffix;
+        }
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.4 });
+
+  counterEls.forEach(function(el) { counterObserver.observe(el); });
 
   // Contact form
   var form = document.getElementById('contactForm');
