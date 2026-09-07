@@ -310,7 +310,7 @@ button, input, textarea, select { font-family: inherit; }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   text-align: center;
 }
@@ -731,38 +731,6 @@ button, input, textarea, select { font-family: inherit; }
 }
 
 /* ========== REVIEWS ========== */
-.reviews-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 40px;
-}
-.review-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.review-stars {
-  color: var(--gold);
-  font-size: 1.1rem;
-  letter-spacing: 2px;
-}
-.review-text {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin: 0;
-  flex: 1;
-}
-.review-author {
-  color: var(--text);
-  font-size: 0.85rem;
-  font-weight: 600;
-}
 .review-cta-wrap {
   margin-top: 16px;
 }
@@ -789,9 +757,6 @@ button, input, textarea, select { font-family: inherit; }
 }
 .review-form-wrap {
   margin-top: 40px;
-}
-@media (max-width: 900px) {
-  .reviews-grid { grid-template-columns: 1fr; }
 }
 
 /* ========== PRICED IN ========== */
@@ -1329,10 +1294,8 @@ button, input, textarea, select { font-family: inherit; }
         <p>Years Experience</p>
       </div>
       <div class="stat-item fade-in">
-        <h3>Owner-Operated</h3>
-      </div>
-      <div class="stat-item fade-in">
-        <h3>Fully Insured</h3>
+        <h3 style="font-size:clamp(20px, 3vw, 28px); white-space:nowrap;">Owner-Operated</h3>
+        <p>Building Company</p>
       </div>
       <div class="stat-item fade-in">
         <h3>Auckland</h3>
@@ -1504,6 +1467,13 @@ button, input, textarea, select { font-family: inherit; }
               <div class="value">Auckland & Surrounds</div>
             </div>
           </div>
+          <div class="credential">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+            <div>
+              <div class="label">Insurance</div>
+              <div class="value">Fully Insured</div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="about-visual fade-in">
@@ -1517,7 +1487,6 @@ button, input, textarea, select { font-family: inherit; }
           </div>
           <div class="stamp">
             <div class="lbp">Licensed Building Practitioner</div>
-            <img src="images/lbp-logo.avif" alt="Licensed Building Practitioner logo" style="height:44px;width:auto;object-fit:contain;margin-top:6px;">
           </div>
         </div>
       </div>
@@ -1610,26 +1579,7 @@ button, input, textarea, select { font-family: inherit; }
     <div class="section-header fade-in" style="text-align:center;margin-bottom:56px;">
       <div class="section-label">Client Reviews</div>
       <h2 class="section-title">What Our Clients Say</h2>
-      <p class="section-desc" style="max-width:540px;margin:0 auto;">Honest feedback from Auckland homeowners we've worked with.</p>
-    </div>
-
-    <!-- Testimonials grid -->
-    <div class="reviews-grid fade-in" id="testimonialsGrid">
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"Denholm and the team did an exceptional job on our deck and outdoor area. Professional, on time, and the quality is outstanding. Highly recommend."</p>
-        <div class="review-author">— Sarah M., Devonport</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"We had our bathroom fully renovated by Tetra Building. Communication was great throughout and the finish is exactly what we wanted."</p>
-        <div class="review-author">— James T., Birkenhead</div>
-      </div>
-      <div class="review-card">
-        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="review-text">"As a first-time homeowner tackling a renovation, I needed someone I could trust. Denholm was transparent, knowledgeable, and did quality work."</p>
-        <div class="review-author">— Aroha K., West Auckland</div>
-      </div>
+      <p class="section-desc" style="max-width:540px;margin:0 auto;">Reviews coming soon.</p>
     </div>
 
     <!-- Review CTA -->
