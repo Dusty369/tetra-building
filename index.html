@@ -766,15 +766,18 @@ button, input, textarea, select { font-family: inherit; }
   background: var(--black);
   border-top: 1px solid var(--black-border);
   border-bottom: 1px solid var(--black-border);
+  padding: 40px 0;
 }
 
 .pricedin-card {
   position: relative;
   background: var(--black-card);
   border: 1px solid var(--black-border);
-  border-radius: 16px;
+  border-radius: 10px;
   overflow: hidden;
-  padding: 56px;
+  padding: 20px 24px;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .pricedin-card::before {
@@ -783,50 +786,37 @@ button, input, textarea, select { font-family: inherit; }
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, var(--green), var(--green-dark), var(--gold));
-}
-
-.pricedin-card::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle at 100% 0%, rgba(34, 197, 94, 0.06) 0%, transparent 60%);
-  pointer-events: none;
 }
 
 .pricedin-top {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  margin-bottom: 48px;
+  gap: 16px;
+  margin-bottom: 12px;
   flex-wrap: wrap;
 }
 
-.pricedin-intro { max-width: 560px; }
+.pricedin-intro { max-width: 380px; }
 
 .pricedin-logo {
-  font-size: 32px;
+  font-size: 17px;
   font-weight: 900;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   color: var(--white);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .pricedin-logo span { color: var(--green); }
 
 .pricedin-tagline {
-  font-size: 15px;
+  font-size: 12px;
   color: var(--gray);
   font-weight: 500;
-  margin-bottom: 20px;
+  line-height: 1.5;
 }
-
-.pricedin-intro .section-desc { margin-bottom: 0; }
 
 .pricedin-price {
   text-align: right;
@@ -834,76 +824,65 @@ button, input, textarea, select { font-family: inherit; }
 }
 
 .pricedin-amount {
-  font-size: 40px;
-  font-weight: 900;
+  font-size: 19px;
+  font-weight: 800;
   color: var(--white);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
 .pricedin-amount span {
-  font-size: 18px;
+  font-size: 11px;
   font-weight: 600;
   color: var(--gray);
 }
 
 .pricedin-trial {
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 600;
   color: var(--green);
-  margin-top: 8px;
+  margin-top: 3px;
 }
 
-.pricedin-features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px 32px;
-  margin-bottom: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-.pricedin-feature {
+.pricedin-highlights {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 12px 0;
-}
-
-.pricedin-feature svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-  color: var(--green);
-}
-
-.pricedin-feature p {
-  font-size: 14px;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  margin-bottom: 14px;
+  font-size: 11px;
   color: var(--gray-light);
-  line-height: 1.6;
 }
 
-.pricedin-feature strong {
-  color: var(--white);
-  font-weight: 600;
+.pricedin-highlights span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pricedin-highlights span::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
 }
 
 .pricedin-bottom {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 14px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
 }
 
 .pricedin-cta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 16px 36px;
+  gap: 6px;
+  padding: 9px 18px;
   background: var(--gold);
   color: var(--black);
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.02em;
@@ -913,22 +892,21 @@ button, input, textarea, select { font-family: inherit; }
 
 .pricedin-cta:hover {
   background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(200, 168, 78, 0.25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(200, 168, 78, 0.2);
 }
 
-.pricedin-cta svg { flex-shrink: 0; }
+.pricedin-cta svg { flex-shrink: 0; width: 13px; height: 13px; }
 
 .pricedin-note {
-  font-size: 13px;
+  font-size: 11px;
   color: var(--gray);
 }
 
 @media (max-width: 768px) {
-  .pricedin-card { padding: 32px 24px; }
-  .pricedin-top { flex-direction: column; gap: 24px; }
+  .pricedin-card { padding: 18px 20px; }
+  .pricedin-top { flex-direction: column; align-items: flex-start; gap: 8px; }
   .pricedin-price { text-align: left; }
-  .pricedin-features { grid-template-columns: 1fr; }
 }
 
 /* ========== CONTACT ========== */
@@ -1640,54 +1618,24 @@ button, input, textarea, select { font-family: inherit; }
       <div class="pricedin-top">
         <div class="pricedin-intro">
           <div class="pricedin-logo">Priced<span>In</span></div>
-          <div class="pricedin-tagline">Built by a NZ builder, for NZ builders</div>
-          <p class="section-desc">AI-powered quoting built for builders who are on the tools, not behind a desk. Generate accurate material and labour quotes on site from your phone.</p>
+          <p class="pricedin-tagline">Also built by Denholm: AI-powered quoting for builders on the tools, not behind a desk.</p>
         </div>
         <div class="pricedin-price">
           <div class="pricedin-amount">$39.95<span>/mo NZD</span></div>
-          <div class="pricedin-trial">14-day free trial &middot; No lock-in</div>
+          <div class="pricedin-trial">14-day free trial</div>
         </div>
       </div>
-      <div class="pricedin-features">
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>Smart Quote engine</strong> trained on NZ building standards (NZS 3604:2011) and real Auckland labour rates</p>
-        </div>
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>Full Carters price book:</strong> 17,000+ products, live pricing, always up to date</p>
-        </div>
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>Plan reader:</strong> upload consented PDF plans, AI extracts full material takeoff automatically</p>
-        </div>
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>Invoice reconciliation:</strong> cross-check delivery dockets against quoted prices instantly</p>
-        </div>
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>LBP knowledge base:</strong> E2/AS1 weathertightness, H1 insulation, B1 structure, treatment grades baked in</p>
-        </div>
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>21 compliance documents in RAG:</strong> MBIE Acceptable Solutions, NZS standards, GIB, Hardie, Colorsteel install guides</p>
-        </div>
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>Labour rates audited to 2026</strong> NZ industry standards across all trades</p>
-        </div>
-        <div class="pricedin-feature">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <p><strong>Quote from site, win the job:</strong> built for builders who are on the tools, not behind a desk</p>
-        </div>
+      <div class="pricedin-highlights">
+        <span>Smart Quote engine</span>
+        <span>Live Carters pricing</span>
+        <span>Instant material takeoffs</span>
       </div>
       <div class="pricedin-bottom">
         <a href="https://www.pricedin.co.nz" target="_blank" rel="noopener" class="pricedin-cta">
           Start Free Trial
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
         </a>
-        <span class="pricedin-note">www.pricedin.co.nz</span>
+        <span class="pricedin-note">pricedin.co.nz</span>
       </div>
     </div>
   </div>
