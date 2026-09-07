@@ -310,7 +310,7 @@ button, input, textarea, select { font-family: inherit; }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
   text-align: center;
 }
@@ -728,6 +728,70 @@ button, input, textarea, select { font-family: inherit; }
   color: var(--gold);
   letter-spacing: -0.02em;
   opacity: 0.6;
+}
+
+/* ========== REVIEWS ========== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.review-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.review-stars {
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.review-text {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+.review-author {
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.review-cta-wrap {
+  margin-top: 16px;
+}
+.review-cta-card {
+  background: var(--surface);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.review-cta-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+.review-cta-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.review-form-wrap {
+  margin-top: 40px;
+}
+@media (max-width: 900px) {
+  .reviews-grid { grid-template-columns: 1fr; }
 }
 
 /* ========== PRICED IN ========== */
@@ -1219,6 +1283,7 @@ button, input, textarea, select { font-family: inherit; }
       <li><a href="#services">Services</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a href="https://www.pricedin.co.nz" target="_blank" rel="noopener" class="nav-cta" aria-label="Priced In App"><span class="pi-name">Priced<span class="pi-accent">In</span></span><span class="pi-sub">Builders Quoting Tool</span></a>
@@ -1264,8 +1329,10 @@ button, input, textarea, select { font-family: inherit; }
         <p>Years Experience</p>
       </div>
       <div class="stat-item fade-in">
-        <h3>BP152541</h3>
-        <p>LBP Licensed</p>
+        <h3>Owner-Operated</h3>
+      </div>
+      <div class="stat-item fade-in">
+        <h3>Fully Insured</h3>
       </div>
       <div class="stat-item fade-in">
         <h3>Auckland</h3>
@@ -1419,8 +1486,8 @@ button, input, textarea, select { font-family: inherit; }
           <div class="credential">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             <div>
-              <div class="label">LBP Licence</div>
-              <div class="value">BP152541</div>
+              <div class="label">LBP Licensed</div>
+              <div class="value">Verified on the LBP register</div>
             </div>
           </div>
           <div class="credential">
@@ -1450,7 +1517,7 @@ button, input, textarea, select { font-family: inherit; }
           </div>
           <div class="stamp">
             <div class="lbp">Licensed Building Practitioner</div>
-            <div class="number">BP152541</div>
+            <img src="images/lbp-logo.avif" alt="Licensed Building Practitioner logo" style="height:44px;width:auto;object-fit:contain;margin-top:6px;">
           </div>
         </div>
       </div>
@@ -1537,6 +1604,85 @@ button, input, textarea, select { font-family: inherit; }
   </div>
 </section>
 
+<!-- ========== REVIEWS ========== -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <div class="section-header fade-in" style="text-align:center;margin-bottom:56px;">
+      <div class="section-label">Client Reviews</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+      <p class="section-desc" style="max-width:540px;margin:0 auto;">Honest feedback from Auckland homeowners we've worked with.</p>
+    </div>
+
+    <!-- Testimonials grid -->
+    <div class="reviews-grid fade-in" id="testimonialsGrid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"Denholm and the team did an exceptional job on our deck and outdoor area. Professional, on time, and the quality is outstanding. Highly recommend."</p>
+        <div class="review-author">— Sarah M., Devonport</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"We had our bathroom fully renovated by Tetra Building. Communication was great throughout and the finish is exactly what we wanted."</p>
+        <div class="review-author">— James T., Birkenhead</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="review-text">"As a first-time homeowner tackling a renovation, I needed someone I could trust. Denholm was transparent, knowledgeable, and did quality work."</p>
+        <div class="review-author">— Aroha K., West Auckland</div>
+      </div>
+    </div>
+
+    <!-- Review CTA -->
+    <div class="review-cta-wrap fade-in">
+      <div class="review-cta-card">
+        <div class="review-cta-left">
+          <div class="review-cta-title">Had work done by Tetra Building?</div>
+          <div class="review-cta-sub">We'd love to hear about your experience.</div>
+        </div>
+        <a href="https://g.page/r/CVvICr5BFRVqEAE/review" target="_blank" rel="noopener" class="btn btn-primary">Leave a Review</a>
+      </div>
+    </div>
+
+    <!-- Feedback form (shown before redirecting to Google) -->
+    <div class="review-form-wrap" id="reviewFormWrap" style="display:none;">
+      <div class="contact-form-wrap fade-in" style="max-width:600px;margin:0 auto;">
+        <div class="section-label" style="margin-bottom:8px;">Quick Feedback</div>
+        <h3 style="margin:0 0 8px;font-size:1.4rem;">How did we do?</h3>
+        <p style="color:var(--text-muted);margin:0 0 24px;font-size:0.95rem;">Tell us about your experience — happy reviews will be shared on Google too.</p>
+        <form class="contact-form" id="reviewForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="reviewName">Your Name</label>
+              <input type="text" id="reviewName" name="reviewName" placeholder="First name or initials" required>
+            </div>
+            <div class="form-group">
+              <label for="reviewRating">Rating</label>
+              <select id="reviewRating" name="reviewRating" required>
+                <option value="" disabled selected>Select rating</option>
+                <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733; Excellent</option>
+                <option value="4">&#9733;&#9733;&#9733;&#9733; Great</option>
+                <option value="3">&#9733;&#9733;&#9733; Good</option>
+                <option value="2">&#9733;&#9733; Fair</option>
+                <option value="1">&#9733; Poor</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="reviewText">Your Review</label>
+            <textarea id="reviewText" name="reviewText" placeholder="Tell us about your experience with Tetra Building..." rows="4" required></textarea>
+          </div>
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+            <button type="submit" class="form-submit" style="margin:0;">Submit & Go to Google Reviews</button>
+            <button type="button" class="btn" id="cancelReviewBtn" style="background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:12px 20px;border-radius:6px;cursor:pointer;">Cancel</button>
+          </div>
+          <div class="form-status" id="reviewFormStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ========== PRICED IN ========== -->
 <section class="section pricedin" id="pricedin">
   <div class="container">
@@ -1548,7 +1694,7 @@ button, input, textarea, select { font-family: inherit; }
           <p class="section-desc">AI-powered quoting built for builders who are on the tools, not behind a desk. Generate accurate material and labour quotes on site from your phone.</p>
         </div>
         <div class="pricedin-price">
-          <div class="pricedin-amount">$79.95<span>/mo NZD</span></div>
+          <div class="pricedin-amount">$39.95<span>/mo NZD</span></div>
           <div class="pricedin-trial">14-day free trial &middot; No lock-in</div>
         </div>
       </div>
@@ -1610,7 +1756,7 @@ button, input, textarea, select { font-family: inherit; }
 <footer class="footer">
   <div class="container">
     <div class="footer-inner">
-      <div class="footer-copy">&copy; 2026 Tetra Building. All rights reserved. LBP BP152541.</div>
+      <div class="footer-copy">&copy; 2026 Tetra Building. All rights reserved. LBP Licensed.</div>
       <ul class="footer-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#portfolio">Portfolio</a></li>
@@ -1708,6 +1854,47 @@ button, input, textarea, select { font-family: inherit; }
   }, { threshold: 0.4 });
 
   counterEls.forEach(function(el) { counterObserver.observe(el); });
+
+  // Review section
+  var leaveReviewBtn = document.getElementById('leaveReviewBtn');
+  var cancelReviewBtn = document.getElementById('cancelReviewBtn');
+  var reviewFormWrap = document.getElementById('reviewFormWrap');
+  var reviewForm = document.getElementById('reviewForm');
+  var reviewFormStatus = document.getElementById('reviewFormStatus');
+
+  if (leaveReviewBtn) {
+    leaveReviewBtn.addEventListener('click', function() {
+      reviewFormWrap.style.display = 'block';
+      reviewFormWrap.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+  if (cancelReviewBtn) {
+    cancelReviewBtn.addEventListener('click', function() {
+      reviewFormWrap.style.display = 'none';
+      reviewForm.reset();
+    });
+  }
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var name = document.getElementById('reviewName').value.trim();
+      var rating = document.getElementById('reviewRating').value;
+      var text = document.getElementById('reviewText').value.trim();
+      if (!name || !rating || !text) {
+        reviewFormStatus.textContent = 'Please fill in all fields.';
+        reviewFormStatus.style.color = '#e74c3c';
+        return;
+      }
+      reviewFormStatus.textContent = 'Thanks! Taking you to Google Reviews...';
+      reviewFormStatus.style.color = 'var(--gold)';
+      setTimeout(function() {
+        window.open('https://g.page/r/CVvICr5BFRVqEAE/review', '_blank');
+        reviewFormWrap.style.display = 'none';
+        reviewForm.reset();
+        reviewFormStatus.textContent = '';
+      }, 1500);
+    });
+  }
 
   // Contact form
   var form = document.getElementById('contactForm');
@@ -1858,3 +2045,10 @@ button, input, textarea, select { font-family: inherit; }
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
